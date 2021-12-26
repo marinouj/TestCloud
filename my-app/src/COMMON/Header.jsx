@@ -8,10 +8,11 @@ const Header = (loggedIn, setLoggedIn) => {
   const [role, setRole] = useState("");
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
-    if (loggedIn) {
+    console.log(loggedInUser);
+    if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser);
-      foundUser ? setUsername(foundUser.Username) : setUsername("");
-      foundUser ? setRole(foundUser.UserRole) : setRole("");
+      foundUser ? setUsername(foundUser.username) : setUsername("");
+      foundUser ? setRole(foundUser.role) : setRole("");
     } else {
       setUsername("");
     }
