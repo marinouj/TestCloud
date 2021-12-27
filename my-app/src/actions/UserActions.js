@@ -1,4 +1,4 @@
-const host = "http://34.64.219.179/";
+const host = "34.64.219.179";
 
 /**Responsible for contacting the server
  * and returning all the users
