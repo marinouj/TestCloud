@@ -14,7 +14,7 @@ const enableWs = require("express-ws")(app);
 const User = require("./src/User.model");
 const connectDb = require("./src/connection");
 
-const PORT = 80;
+const PORT = 8080;
 
 app.use(express.json());
 app.use(express.urlencoded());
