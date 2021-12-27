@@ -30,7 +30,6 @@ const verifyUser = async (name, password) => {
 };
 
 const createUser = async (user) => {
-  console.log("Create user db");
   const u = new User({
     username: user.username,
     password: user.password,

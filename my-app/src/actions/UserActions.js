@@ -2,9 +2,7 @@
  * and returning all the users
  */
 export const loadUsers = async () => {
-  const addr = window.location.hostname;
-  console.log("address" + addr);
-  const newData = await fetch("http://" + addr + ":8080/users", {
+  const newData = await fetch("http://localhost:8080/users", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -19,10 +17,8 @@ export const loadUsers = async () => {
  * provided are accepted
  */
 export const verifyUser = async (user) => {
-  const addr = window.location.hostname;
-  console.log("address" + addr);
   console.log(user);
-  const newData = await fetch("http://" + addr + ":8080/login", {
+  const newData = await fetch("http://localhost:8080/login", {
     method: "POST",
     body: JSON.stringify({ name: user.username, password: user.password }),
     headers: {
@@ -37,9 +33,7 @@ export const verifyUser = async (user) => {
 /**Responsible to get users notifications/info
  */
 export const getUser = async (id) => {
-  const addr = window.location.hostname;
-  console.log("address" + addr);
-  const newData = await fetch("http://" + addr + ":8080/getUser", {
+  const newData = await fetch("http://localhost:8080/getUser", {
     method: "POST",
     body: JSON.stringify({ id: id }),
     headers: {
@@ -54,9 +48,7 @@ export const getUser = async (id) => {
  * and adding a user
  */
 export const createUser = async (user) => {
-  const addr = window.location.hostname;
-  console.log("address" + addr);
-  await fetch("http://" + addr + ":8080/createUser", {
+  await fetch("http://localhost:8080/createUser", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
