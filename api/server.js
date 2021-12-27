@@ -28,13 +28,9 @@ app.post("/login", async (req, res) => {
 });
 
 app.get("/users", async (req, res) => {
-  try {
-    const users = await User.find();
-    //res.json(users);
-    res.json(users);
-  } catch (error) {
-    res.json(error);
-  }
+  const users = await User.find();
+  //res.json(users);
+  res.json(users);
 });
 
 app.get("/adduser", async (req, res) => {
