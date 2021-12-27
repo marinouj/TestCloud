@@ -3,7 +3,7 @@
  */
 export const loadUsers = async () => {
   const addr = window.location.hostname;
-  console.log(addr);
+  console.log("address" + addr);
   const newData = await fetch("http://" + addr + ":8080/users", {
     method: "GET",
     headers: {
@@ -20,7 +20,7 @@ export const loadUsers = async () => {
  */
 export const verifyUser = async (user) => {
   const addr = window.location.hostname;
-  console.log(addr);
+  console.log("address" + addr);
   console.log(user);
   const newData = await fetch("http://" + addr + ":8080/login", {
     method: "POST",
@@ -38,7 +38,7 @@ export const verifyUser = async (user) => {
  */
 export const getUser = async (id) => {
   const addr = window.location.hostname;
-  console.log(addr);
+  console.log("address" + addr);
   const newData = await fetch("http://" + addr + ":8080/getUser", {
     method: "POST",
     body: JSON.stringify({ id: id }),
@@ -55,7 +55,7 @@ export const getUser = async (id) => {
  */
 export const createUser = async (user) => {
   const addr = window.location.hostname;
-  console.log(addr);
+  console.log("address" + addr);
   await fetch("http://" + addr + ":8080/createUser", {
     method: "POST",
     headers: {
