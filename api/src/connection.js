@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const User = require("./User.model");
 
-const connection = "mongodb://mongo:27017/mongo-test";
+const connection = "mongodb://127.0.0.1:27017/mydb";
 
 const connectDb = () => {
   return mongoose.connect(connection);
