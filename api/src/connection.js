@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const User = require("./User.model");
 
-const connection = "mongodb://127.0.0.1:27017/mydb";
+const connection = "mongodb://127.0.0.1:27017/local";
 
 const connectDb = () => {
   return mongoose.connect(connection);
