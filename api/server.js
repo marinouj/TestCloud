@@ -32,25 +32,25 @@ app.get("/users", async (req, res) => {
   res.json(users);
 });
 
-app.get("/adduser", async (req, res) => {
-  const u = new User({
-    username: "jjj",
-    password: "jjj",
-    firstname: "user.name",
-    lastname: "user.lastname",
-    email: "user.email",
-    role: "user.role",
-    confirmed: false,
-    notifications: "",
-  });
-  console.log(u);
-  try {
-    await u.save().then(() => console.log("User created"));
-    res.json("User Created");
-  } catch (error) {
-    console.log(error);
-  }
-});
+// app.get("/adduser", async (req, res) => {
+//   const u = new User({
+//     username: "jjj",
+//     password: "jjj",
+//     firstname: "user.name",
+//     lastname: "user.lastname",
+//     email: "user.email",
+//     role: "user.role",
+//     confirmed: false,
+//     notifications: "",
+//   });
+//   console.log(u);
+//   try {
+//     await u.save().then(() => console.log("User created"));
+//     res.json("User Created");
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 app.post("/createUser", async (req, res) => {
   const result = await Db.createUser(req.body);
