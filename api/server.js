@@ -14,7 +14,7 @@ const enableWs = require("express-ws")(app);
 const User = require("./src/User.model");
 const connectDb = require("./src/connection");
 
-const PORT = 8080;
+const PORT = 80;
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -30,6 +30,26 @@ app.post("/login", async (req, res) => {
 app.get("/users", async (req, res) => {
   const users = await User.find();
   res.json(users);
+});
+
+app.get("/adduser", async (req, res) => {
+  const u = new User({
+    username: "jjj",
+    password: "jjj",
+    firstname: "user.name",
+    lastname: "user.lastname",
+    email: "user.email",
+    role: "user.role",
+    confirmed: false,
+    notifications: "",
+  });
+  console.log(u);
+  try {
+    await u.save().then(() => console.log("User created"));
+    res.json("User Created");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.post("/createUser", async (req, res) => {
