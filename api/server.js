@@ -33,6 +33,7 @@ app.get("/users", async (req, res) => {
 });
 
 app.post("/createUser", async (req, res) => {
+  console.log("api create user");
   const result = await Db.createUser(req.body);
   res.json(result);
 });
