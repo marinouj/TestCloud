@@ -14,7 +14,7 @@ const enableWs = require("express-ws")(app);
 const User = require("./src/User.model");
 const connectDb = require("./src/connection");
 
-const PORT = 80;
+const PORT = 8080;
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -28,7 +28,7 @@ app.post("/login", async (req, res) => {
 });
 
 app.get("/users", async (req, res) => {
-  //const users = await User.find();
+  const users = await User.find();
   res.json("Users");
 });
 
