@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import * as actions from "../actions/FavoritesActions";
-import * as concertActions from "../actions/ConcertActions";
+import * as actions from "../actions/UserActions";
 
 class ConcertTable extends React.Component {
   state = {
@@ -16,7 +15,7 @@ class ConcertTable extends React.Component {
    * user when entering the webpage
    */
   componentDidMount() {
-    concertActions
+    actions
       .loadConcerts()
       .then((newData) => {
         this.setState({
@@ -45,7 +44,7 @@ class ConcertTable extends React.Component {
    */
   componentDidUpdate() {
     if (this.state.question) {
-      concertActions
+      actions
         .filterConcerts(this.state.question)
         .then((newData) => {
           this.setState({
@@ -59,7 +58,7 @@ class ConcertTable extends React.Component {
           alert("Loading concerts failed: " + error);
         });
     } else {
-      concertActions
+      actions
         .loadConcerts()
         .then((newData) => {
           this.setState({
@@ -127,8 +126,8 @@ class ConcertTable extends React.Component {
     }
     this.setState({ question: tempQuestion });
     if (tempQuestion) {
-      concertActions
-        .filterConcerts(tempQuestion)
+      actio;
+      ns.filterConcerts(tempQuestion)
         .then((newData) => {
           this.setState({
             returnedData: newData.map((c) => ({
@@ -141,8 +140,8 @@ class ConcertTable extends React.Component {
           alert("Loading concerts failed: " + error);
         });
     } else {
-      concertActions
-        .loadConcerts()
+      actio;
+      ns.loadConcerts()
         .then((newData) => {
           this.setState({
             returnedData: newData.map((c) => ({

@@ -1,14 +1,12 @@
 import React from "react";
-import * as concertActions from "../actions/ConcertActions";
-import * as userActions from "../actions/UserActions";
-import * as favoriteActions from "../actions/FavoritesActions";
+import * as actions from "../actions/UserActions";
 import ConcertForm from "./ConcertForm";
 
 /** Executes delete of the concert the uder asked for
  *  identifing it by its id
  */
 const deleteConcert = (cid) => {
-  concertActions
+  actions
     .deleteConcert(cid)
     .then((newData) => console.log(newData))
     .catch((error) => {
@@ -20,21 +18,21 @@ const deleteConcert = (cid) => {
  * every time it is clicked
  */
 const cancelConcert = (cid, title) => {
-  concertActions
+  actions
     .cancelConcert(cid, title)
     .then()
     .catch((error) => {
       alert("Loading failed: " + error);
     });
 
-  favoriteActions
+  actions
     .loadFavoritesByConcert(cid)
     .then((users) => {
       users.map((u) => {
-        userActions
+        actions
           .getUser(u.userId)
           .then((res) => {
-            concertActions
+            actions
               .notifyUsers(
                 u.userId,
                 "Concert " + title + " canceled, " + res[0].notifications
@@ -77,7 +75,7 @@ class OrganizerConcerts extends React.Component {
 
   /**Loads concerts of logged in organizer when page loads*/
   componentDidMount() {
-    concertActions
+    actions
       .loadOrgConcerts(this.state.loggedInUser._id)
       .then((newData) => {
         this.setState({
@@ -94,7 +92,7 @@ class OrganizerConcerts extends React.Component {
 
   /**Updates concerts of logged in organizer when data update*/
   componentDidUpdate() {
-    concertActions
+    actions
       .loadOrgConcerts(this.state.loggedInUser._id)
       .then((newData) =>
         this.setState({

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as actions from "../actions/ConcertActions";
+import * as actions from "../actions/UserActions";
 
 const ConcertForm = (props) => {
   /**If the concert given at the props has a concert id
