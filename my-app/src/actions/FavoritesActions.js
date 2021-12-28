@@ -3,7 +3,7 @@
  * user specified by the id
  */
 export const loadFavorites = async (id) => {
-  const newData = await fetch("http://34.64.219.179:8080/loadFavorites", {
+  const newData = await fetch("http://localhost:8080/loadFavorites", {
     method: "POST",
     body: JSON.stringify({ id: id }),
     headers: {
@@ -19,17 +19,14 @@ export const loadFavorites = async (id) => {
  * user specified by the id
  */
 export const loadFavoritesByConcert = async (id) => {
-  const newData = await fetch(
-    "http://34.64.219.179:8080/loadFavoritesByConcert",
-    {
-      method: "POST",
-      body: JSON.stringify({ id: id }),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    }
-  ).then((res) => res.json());
+  const newData = await fetch("http://localhost:8080/loadFavoritesByConcert", {
+    method: "POST",
+    body: JSON.stringify({ id: id }),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  }).then((res) => res.json());
   return newData;
 };
 
@@ -37,7 +34,7 @@ export const loadFavoritesByConcert = async (id) => {
  * and returning all the favorites
  */
 export const loadAllFavorites = async () => {
-  const newData = await fetch("http://34.64.219.179:8080/loadAllFavorites", {
+  const newData = await fetch("http://localhost:8080/loadAllFavorites", {
     method: "POST",
     body: JSON.stringify({}),
     headers: {
@@ -52,7 +49,7 @@ export const loadAllFavorites = async () => {
  * to add a song to a user's favorites
  */
 export const addFavotite = async (cid, uid) => {
-  const newData = await fetch("http://34.64.219.179:8080/addFavorite", {
+  const newData = await fetch("http://localhost:8080/addFavorite", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +66,7 @@ export const addFavotite = async (cid, uid) => {
  * favorites list
  */
 export const deleteFavotite = async (id) => {
-  const newData = await fetch("http://34.64.219.179:8080/deleteFavorite", {
+  const newData = await fetch("http://localhost:8080/deleteFavorite", {
     method: "POST",
     body: JSON.stringify({ id: id }),
     headers: {
