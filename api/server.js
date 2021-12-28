@@ -29,7 +29,7 @@ app.post("/login", async (req, res) => {
 
 app.get("/users", async (req, res) => {
   const users = await User.find();
-  res.json("Users");
+  res.json(users);
 });
 
 app.post("/createUser", async (req, res) => {

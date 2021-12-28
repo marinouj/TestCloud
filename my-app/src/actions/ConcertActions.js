@@ -2,7 +2,7 @@
  * and returning all the avaliable concerts
  */
 export const loadConcerts = async () => {
-  const newData = await fetch("http://localhost:8080/loadConcerts", {
+  const newData = await fetch("http://34.64.219.179:8080/loadConcerts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export const loadConcerts = async () => {
  * apply
  */
 export const filterConcerts = async (filter) => {
-  const newData = await fetch("http://localhost:8080/filterConcerts", {
+  const newData = await fetch("http://34.64.219.179:8080/filterConcerts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const filterConcerts = async (filter) => {
  * organizer is hosting
  */
 export const loadOrgConcerts = async (uid) => {
-  const newData = await fetch("http://localhost:8080/loadOrgConcerts", {
+  const newData = await fetch("http://34.64.219.179:8080/loadOrgConcerts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const loadOrgConcerts = async (uid) => {
  * and adding the passed in concert
  */
 export const addConcert = async (concert) => {
-  const newData = await fetch("http://localhost:8080/addConcert", {
+  const newData = await fetch("http://34.64.219.179:8080/addConcert", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export const addConcert = async (concert) => {
  * (concertId and organizer can not be updated)
  */
 export const updateConcert = async (concert) => {
-  const newData = await fetch("http://localhost:8080/updateConcert", {
+  const newData = await fetch("http://34.64.219.179:8080/updateConcert", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -82,7 +82,7 @@ export const updateConcert = async (concert) => {
  * and deleting a concert determined by its ID
  */
 export const deleteConcert = async (cid) => {
-  const newData = await fetch("http://localhost:8080/deleteConcert", {
+  const newData = await fetch("http://34.64.219.179:8080/deleteConcert", {
     method: "POST",
     body: JSON.stringify({ cid: cid }),
     headers: {
@@ -116,7 +116,7 @@ export const cancelConcert = async (cid, title) => {
  * and deleting a concert determined by its ID
  */
 export const notifyUsers = async (id, notification) => {
-  const newData = await fetch("http://localhost:8080/addNotification", {
+  const newData = await fetch("http://34.64.219.179:8080/addNotification", {
     method: "POST",
     body: JSON.stringify({ id: id, not: notification }),
     headers: {
