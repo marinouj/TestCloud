@@ -9,6 +9,21 @@ const connectDb = async () => {
   const users = await User.find();
   if (users.length === 0) {
     console.log("init admin");
+    const u = new User({
+      username: "admin",
+      password: "admin",
+      firstname: "",
+      lastname: "",
+      email: "",
+      role: "Admin",
+      confirmed: true,
+      notifications: "",
+    });
+    try {
+      await u.save().then(() => console.log("Admin initialised"));
+    } catch (error) {
+      console.log(error);
+    }
   }
   return connect;
 };

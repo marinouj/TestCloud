@@ -38,7 +38,7 @@ const createUser = async (user) => {
     email: user.email,
     role: user.role,
     confirmed: false,
-    notifications: "none",
+    notifications: "",
   });
   console.log(u);
   try {
