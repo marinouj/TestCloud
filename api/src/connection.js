@@ -4,9 +4,12 @@ const User = require("./User.model");
 
 const connection = "mongodb://mongo:27017/test";
 
-const connectDb = () => {
+const connectDb = async () => {
   const connect = mongoose.connect(connection);
-  console.log("connecting");
+  const users = await User.find();
+  if (users.length === 0) {
+    console.log("init admin");
+  }
   return connect;
 };
 
