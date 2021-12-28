@@ -9,6 +9,7 @@ export const loadUsers = async () => {
       Accept: "application/json",
     },
   }).then((res) => res.json());
+  console.log(newData);
   return newData;
 };
 
