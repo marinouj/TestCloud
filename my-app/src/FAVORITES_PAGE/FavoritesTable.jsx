@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import * as actions from "../actions/FavoritesActions";
+import * as actions from "../actions/UserActions";
 import * as concertActions from "../actions/ConcertActions";
 
 /** Deletes favorite where FavoriteId=id */
