@@ -21,7 +21,11 @@ const getUsers = async () => {
 
 const verifyUser = async (name, password) => {
   try {
-    const u = await User.find({ username: name, password: password });
+    const u = await User.find({
+      username: name,
+      password: password,
+      confirmed: true,
+    });
     console.log(u);
     return u;
   } catch (error) {
