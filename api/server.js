@@ -162,7 +162,7 @@ app.ws("/sentMessage", (ws, req) => {
 app.listen(PORT, function () {
   console.log(`Listening on ${PORT}`);
 
-  await connectDb().then(() => {
+  connectDb().then(() => {
     console.log("MongoDb connected");
   });
 });
