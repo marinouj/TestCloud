@@ -6,10 +6,7 @@ const connection = "mongodb://mongo:27017/test";
 
 const connectDb = () => {
   const connect = mongoose.connect(connection);
-  const users = await User.find();
-  if (users.length === 0) {
-    console.log("init admin");
-  }
+  console.log("connecting");
   return connect;
 };
 
