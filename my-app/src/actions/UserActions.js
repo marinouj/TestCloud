@@ -161,7 +161,7 @@ export const addFavotite = async (cid, uid) => {
  * favorites list
  */
 export const deleteFavotite = async (id) => {
-  const newData = await fetch("http://34.64.81.28:8080/dehostleteFavorite", {
+  const newData = await fetch("http://34.64.81.28:8080/deleteFavorite", {
     method: "POST",
     body: JSON.stringify({ id: id }),
     headers: {
