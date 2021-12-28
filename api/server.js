@@ -114,11 +114,6 @@ app.post("/loadFavoritesByConcert", async (req, res) => {
   res.json(result);
 });
 
-// app.post("/loadAllFavorites", async (req, res) => {
-//   const result = await Db.getAllFavorites();
-//   res.json(result.recordset);
-// });
-
 app.post("/deleteFavorite", async (req, res) => {
   const result = await Db.deleteFavorite(req.body.id);
   res.json(result);

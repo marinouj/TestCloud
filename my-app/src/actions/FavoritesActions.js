@@ -31,21 +31,6 @@ export const loadFavoritesByConcert = async (id) => {
 };
 
 /**Responsible for contacting the server
- * and returning all the favorites
- */
-export const loadAllFavorites = async () => {
-  const newData = await fetch("http://localhost:8080/loadAllFavorites", {
-    method: "POST",
-    body: JSON.stringify({}),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  }).then((res) => res.json());
-  return newData;
-};
-
-/**Responsible for contacting the server
  * to add a song to a user's favorites
  */
 export const addFavotite = async (cid, uid) => {
