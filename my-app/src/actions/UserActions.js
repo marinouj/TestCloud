@@ -2,7 +2,7 @@
  * and returning all the users
  */
 export const loadUsers = async () => {
-  const newData = await fetch("http://34.64.219.179:8080/users", {
+  const newData = await fetch("http://34.64.219.179:8080/loadUsers", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
