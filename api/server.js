@@ -49,7 +49,6 @@ app.post("/getUser", async (req, res) => {
 
 app.get("/loadUsers", async (req, res) => {
   const result = await Db.getUsers();
-  console.log(result);
   res.json(result);
 });
 

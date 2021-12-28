@@ -13,7 +13,6 @@ const Favorites = require("../src/Favorites.model");
 const getUsers = async () => {
   try {
     const users = await User.find();
-    console.log(users);
     return users;
   } catch (error) {
     return error;
