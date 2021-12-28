@@ -126,8 +126,8 @@ class ConcertTable extends React.Component {
     }
     this.setState({ question: tempQuestion });
     if (tempQuestion) {
-      actio;
-      ns.filterConcerts(tempQuestion)
+      actions
+        .filterConcerts(tempQuestion)
         .then((newData) => {
           this.setState({
             returnedData: newData.map((c) => ({
@@ -140,8 +140,8 @@ class ConcertTable extends React.Component {
           alert("Loading concerts failed: " + error);
         });
     } else {
-      actio;
-      ns.loadConcerts()
+      actions
+        .loadConcerts()
         .then((newData) => {
           this.setState({
             returnedData: newData.map((c) => ({
